@@ -1,11 +1,25 @@
 {
   "name": "react-markdown-renderer-regie",
-  "version": "1.0.2",
+  "version": "1.0.8",
   "type": "module",
+  "keywords": [
+    "react",
+    "component"
+  ],
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
+  "files": ["dist"],
   "scripts": {
     "dev": "vite",
     "test": "vitest",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
+    "prepublish": "rm -rf ./dist && npm run build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
