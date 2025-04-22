@@ -1,6 +1,6 @@
 {
   "name": "react-markdown-renderer-regie",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "type": "module",
   "keywords": [
     "react",
@@ -14,7 +14,9 @@
       "require": "./dist/index.umd.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "test": "vitest",
@@ -45,5 +47,9 @@
     "typescript-eslint": "^8.26.1",
     "vite": "^6.3.1",
     "vitest": "^3.1.2"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
