@@ -4,9 +4,6 @@ This template provides a minimal setup to get React working in Vite with HMR, ES
 
 ## Included Features
 
-- **React** via Vite
-- **TypeScript**
-- **ESLint** with optional stricter configurations
 - **Custom JSX Markdown Renderer** with support for:
   - Headings (`#` to `####`)
   - Inline styles: **bold**, *italic*, ~~strike~~, `inline code`
