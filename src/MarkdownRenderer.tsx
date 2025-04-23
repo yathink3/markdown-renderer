@@ -55,17 +55,17 @@ const applyInlinePatterns = (text: string): React.ReactNode[] => {
       const [fullMatch] = match;
       const index = match.index ?? 0;
       if (index > lastIndex) {
-        result.push(text.slice(lastIndex, index));
+        const plainText = text.slice(lastIndex, index);
+        result.push(...applyInlinePatterns(plainText));
       }
       result.push(render(match, result.length));
       lastIndex = index + fullMatch.length;
     });
     if (lastIndex < text.length) {
-      result.push(text.slice(lastIndex));
+      const remainingText = text.slice(lastIndex);
+      result.push(...applyInlinePatterns(remainingText));
     }
-    return result.flatMap((el) =>
-      typeof el === "string" ? applyInlinePatterns(el) : el
-    );
+    return result;
   }
 
   return [text];
